@@ -1,5 +1,6 @@
 use std::io;
 
+/// Prompts the user for a list of integers and validates the input.
 fn get_valid_numbers() -> Vec<i32> {
     loop {
         println!("Enter a list of integers separated by commas: ");
@@ -23,6 +24,7 @@ fn get_valid_numbers() -> Vec<i32> {
     }
 }
 
+/// Returns the maximum and minimum values from a slice of integers.
 fn maxmin(numbers: &[i32]) -> [i32; 2] {
     let mut lowest = numbers[0];
     let mut highest = numbers[0];
