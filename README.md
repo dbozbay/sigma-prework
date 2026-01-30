@@ -23,7 +23,7 @@ python maxmin.py
 **Example:**
 ```
 Enter a list of integers separated by commas: 2, 4, 1, 0, 2, -1
-Lowest: -1, Highest: 4
+Maximum and minimum values are: [4, -1]
 ```
 
 ### age.py
