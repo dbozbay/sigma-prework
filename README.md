@@ -1,41 +1,76 @@
-# Python Basics - Sigma Labs Pre-Course
+# Sigma Labs Pre-Course
 
-A collection of Python exercises completed as part of the Sigma Labs pre-course program.
+A collection of programming exercises completed as part of the Sigma Labs pre-course program, implemented in both Python and Rust.
 
-## Project Overview
+## Project Structure
 
-This repository contains two Python scripts demonstrating fundamental programming concepts:
-
-1. **maxmin.py** - Find the maximum and minimum values in a list
-2. **age.py** - Calculate a person's age from their date of birth
-
-## Scripts
-
-### maxmin.py
-
-Prompts the user to enter a list of integers and returns the highest and lowest numbers without using Python's built-in `max()` or `min()` functions.
-
-**Usage:**
-```bash
-python maxmin.py
+```
+.
+├── python/              # Python project (managed with uv)
+│   ├── pyproject.toml
+│   ├── uv.lock
+│   ├── age.py
+│   └── maxmin.py
+└── rust/                # Rust project (managed with Cargo)
+    ├── Cargo.toml
+    └── src/
+        ├── maxmin.rs
+        └── age.rs
 ```
 
-**Example:**
+## Exercises
+
+### 1. Maximum and Minimum Finder
+
+Prompts the user to enter a list of integers and returns the highest and lowest numbers without using built-in max/min functions.
+
+**Python Usage:**
+```bash
+cd python
+uv run maxmin.py
+```
+
+**Python Example:**
 ```
 Enter a list of integers separated by commas: 2, 4, 1, 0, 2, -1
 Maximum and minimum values are: [4, -1]
 ```
 
-### age.py
-
-Asks the user for their date of birth in YYYY-MM-DD format and calculates their current age.
-
-**Usage:**
+**Rust Usage:**
 ```bash
-python age.py
+cd rust
+cargo run --bin maxmin
 ```
 
-**Example:**
+**Rust Example:**
+```
+Enter a list of integers separated by commas: -100, 0, 0, 0, 100
+Maximum and minimum values are: [100, -100]
+```
+
+### 2. Age Calculator
+
+Asks the user for their date of birth and calculates their current age.
+
+**Python Usage:**
+```bash
+cd python
+uv run age.py
+```
+
+**Python Example:**
+```
+Enter your date of birth (YYYY-MM-DD): 1995-06-15
+You are 29 years old.
+```
+
+**Rust Usage:**
+```bash
+cd rust
+cargo run --bin age
+```
+
+**Rust Example:**
 ```
 Enter your date of birth (YYYY-MM-DD): 1995-06-15
 You are 29 years old.
@@ -43,7 +78,32 @@ You are 29 years old.
 
 ## Requirements
 
-- Python 3.7+
+**Python:**
+- Python 3.14 or higher
+- `uv` package manager
+
+**Rust:**
+- Rust 1.70 or higher
+- Cargo (included with Rust)
+
+## Installation
+
+**Python with uv:**
+```bash
+# Install uv (if not already installed)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Navigate to python directory
+cd python
+
+# uv will automatically manage the Python version, dependencies and virtual env with the `run` command
+```
+
+**Rust:**
+```bash
+# Install Rust from rustup.rs
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
 
 ## License
 
