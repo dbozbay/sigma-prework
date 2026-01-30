@@ -20,7 +20,7 @@ def calculuate_age(dob: datetime) -> int:
     return age
 
 
-def main():
+def main() -> None:
     date_of_birth = get_valid_date_of_birth()
     age = calculuate_age(date_of_birth)
     print(f"You are {age} years old.")
