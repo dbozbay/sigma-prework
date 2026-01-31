@@ -13,9 +13,11 @@ A collection of programming exercises completed as part of the Sigma Labs pre-co
 │   └── maxmin.py
 └── rust/                # Rust project (managed with Cargo)
     ├── Cargo.toml
+    ├── Cargo.lock
     └── src/
-        ├── maxmin.rs
-        └── age.rs
+        ├── bin/
+            ├── maxmin.rs
+            └── age.rs
 ```
 
 ## Exercises
