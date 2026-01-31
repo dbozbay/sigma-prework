@@ -9,7 +9,7 @@ def get_valid_date_of_birth() -> datetime:
             dob = datetime.strptime(date_of_birth, "%Y-%m-%d")
             return dob
         except ValueError:
-            print("Invalid format. Please enter the date in YYYY-MM-DD format.")
+            print("Date of birth must be in YYYY-MM-DD format.")
             continue
 
 
@@ -21,8 +21,8 @@ def calculuate_age(dob: datetime) -> int:
 
 
 def main() -> None:
-    date_of_birth = get_valid_date_of_birth()
-    age = calculuate_age(date_of_birth)
+    dob = get_valid_date_of_birth()
+    age = calculuate_age(dob)
     print(f"You are {age} years old.")
 
 
