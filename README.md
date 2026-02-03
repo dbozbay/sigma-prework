@@ -18,7 +18,7 @@ A collection of programming exercises completed as part of the Sigma Labs pre-co
 2. Clone this repository:
 
     ```bash
-    git clone git@github.com:dbozbay/sigma-prework.git
+    git clone https://github.com/dbozbay/sigma-prework.git
     cd sigma-prework
     ```
 
