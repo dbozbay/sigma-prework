@@ -16,7 +16,7 @@ uv run maxmin.py
 
 **Example:**
 ```
-Enter a list of integers separated by commas: 2, 4, 1, 0, 2, -1
+Enter a list of integers: 2, 4, 1, 0, 2, -1
 Maximum and minimum values are: [4, -1]
 ```
 
