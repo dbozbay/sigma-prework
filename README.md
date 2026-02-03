@@ -78,9 +78,6 @@ uv run pytest -v
 # Run specific test file
 uv run pytest tests/test_maxmin.py
 uv run pytest tests/test_age.py
-
-# Alternative: using python directly
-python -m pytest
 ```
 
 ## License
