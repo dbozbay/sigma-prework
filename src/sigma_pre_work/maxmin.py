@@ -1,26 +1,19 @@
-def get_user_numbers() -> list[int]:
+def get_user_input() -> str:
     """Prompt user for a list of integers separated by commas."""
-    numbers_input = input("Enter a list of integers: ")
-    numbers = parse_numbers(numbers_input)
-
-    if len(numbers) < 2:
-        raise ValueError("Invalid input. Please enter at least two integers.")
-
-    return parse_numbers(numbers_input)
+    return input("Enter a list of integers: ").strip()
 
 
-def parse_numbers(numbers: str, seperators: list[str] = [",", ";", ":"]) -> list[int]:
+def parse_numbers(input: str, seperators: list[str] = [",", ";", ":"]) -> list[int]:
     """Parse a string into a list of integers based on given separators."""
-    normalized = numbers.strip()
     for sep in seperators:
-        normalized = normalized.replace(sep, " ")
+        input = input.replace(sep, " ")
 
     try:
-        normalized = [int(num) for num in normalized.split()]
+        result = [int(num) for num in input.split()]
     except ValueError as e:
-        raise ValueError("Invalid input. Please enter integers only.") from e
+        raise ValueError("invalid digit found in string") from e
 
-    return normalized
+    return result
 
 
 def maxmin(numbers: list[int]) -> list[int]:
@@ -39,10 +32,13 @@ def maxmin(numbers: list[int]) -> list[int]:
 
 def main() -> None:
     while True:
+        input = get_user_input()
         try:
-            numbers = get_user_numbers()
-            result = maxmin(numbers)
-            print(f"Maximum and minimum values are: {result}")
+            numbers = parse_numbers(input)
+            if len(numbers) < 2:
+                print("Please enter at least two integers.")
+                continue
+            print(f"Maximum and minimum values are: {maxmin(numbers)}")
             break
         except ValueError as e:
             print(f"Error: {e}")
