@@ -32,8 +32,8 @@ Prompts the user to enter a list of integers and returns the highest and lowest 
 
 **Usage:**
 ```bash
-# Preferred: using uv
-uv run src/sigma_pre_work/maxmin.py
+# Preferred: using the defined script
+uv run maxmin
 
 # Alternative: using python directly
 python src/sigma_pre_work/maxmin.py
@@ -51,8 +51,8 @@ Asks the user for their date of birth and calculates their current age.
 
 **Usage:**
 ```bash
-# Preferred: using uv
-uv run src/sigma_pre_work/age.py
+# Preferred: using the defined script
+uv run age
 
 # Alternative: using python directly
 python src/sigma_pre_work/age.py
