@@ -1,15 +1,26 @@
 def get_user_numbers() -> list[int]:
     """Prompt user for a list of integers separated by commas."""
-    try:
-        numbers_input = input("Enter a list of integers separated by commas: ")
-        numbers = [int(num.strip()) for num in numbers_input.split(",")]
-    except ValueError:
-        raise ValueError("Invalid input. Please enter integers only.")
+    numbers_input = input("Enter a list of integers: ")
+    numbers = parse_numbers(numbers_input)
 
     if len(numbers) < 2:
         raise ValueError("Invalid input. Please enter at least two integers.")
 
-    return numbers
+    return parse_numbers(numbers_input)
+
+
+def parse_numbers(numbers: str, seperators: list[str] = [",", ";", ":"]) -> list[int]:
+    """Parse a string into a list of integers based on given separators."""
+    normalized = numbers.strip()
+    for sep in seperators:
+        normalized = normalized.replace(sep, " ")
+
+    try:
+        normalized = [int(num) for num in normalized.split()]
+    except ValueError as e:
+        raise ValueError("Invalid input. Please enter integers only.") from e
+
+    return normalized
 
 
 def maxmin(numbers: list[int]) -> list[int]:
