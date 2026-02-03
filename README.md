@@ -2,6 +2,27 @@
 
 A collection of programming exercises completed as part of the Sigma Labs pre-course program, implemented in Python.
 
+## Requirements
+
+- Python 3.14 or higher
+- `uv` package manager (recommended)
+
+## Installation
+
+1. Install `uv` (will automatically manage the Python version, dependencies and virtual env with the `run` command):
+
+    ```bash
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    ```
+
+2. Clone this repository:
+
+    ```bash
+    git clone git@github.com:dbozbay/sigma-prework.git
+    cd sigma-prework
+    ```
+
+3. The project is ready to use! `uv` will automatically handle dependencies when you run scripts or tests.
 
 ## Exercises
 
@@ -43,25 +64,24 @@ Enter your date of birth (YYYY-MM-DD): 1995-06-15
 You are 29 years old.
 ```
 
-## Requirements
+## Testing
 
-- Python 3.14 or higher
-- `uv` package manager
+Run the test suite to verify all exercises work correctly:
 
-## Installation
+```bash
+# Run all tests
+uv run pytest
 
-1. Instuall `uv` (will automatically manage the Python version, dependencies and virtual env with the `run` command ):
+# Run tests with verbose output
+uv run pytest -v
 
-    ```bash
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-    ```
+# Run specific test file
+uv run pytest tests/test_maxmin.py
+uv run pytest tests/test_age.py
 
-2. Clone this repository:
-
-    ```bash
-    git clone git@github.com:dbozbay/sigma-prework.git
-    cd sigma-prework
-    ```
+# Alternative: using python directly
+python -m pytest
+```
 
 ## License
 
