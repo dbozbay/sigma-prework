@@ -1,16 +1,15 @@
-def get_valid_numbers() -> list[int]:
+def get_user_numbers() -> list[int]:
     """Prompt user for a list of integers separated by commas."""
-    while True:
-        try:
-            numbers_input = input("Enter a list of integers separated by commas: ")
-            numbers = [int(num.strip()) for num in numbers_input.split(",")]
-            if len(numbers) < 2:
-                print("Please enter at least two integers.")
-                continue
-            return numbers
-        except ValueError:
-            print("Invalid input. Please enter integers only.")
-            continue
+    try:
+        numbers_input = input("Enter a list of integers separated by commas: ")
+        numbers = [int(num.strip()) for num in numbers_input.split(",")]
+    except ValueError:
+        raise ValueError("Invalid input. Please enter integers only.")
+
+    if len(numbers) < 2:
+        raise ValueError("Invalid input. Please enter at least two integers.")
+
+    return numbers
 
 
 def maxmin(numbers: list[int]) -> list[int]:
@@ -28,9 +27,15 @@ def maxmin(numbers: list[int]) -> list[int]:
 
 
 def main() -> None:
-    numbers = get_valid_numbers()
-    result = maxmin(numbers)
-    print(f"Maximum and minimum values are: {result}")
+    while True:
+        try:
+            numbers = get_user_numbers()
+            result = maxmin(numbers)
+            print(f"Maximum and minimum values are: {result}")
+            break
+        except ValueError as e:
+            print(f"Error: {e}")
+            continue
 
 
 if __name__ == "__main__":
