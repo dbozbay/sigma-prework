@@ -13,7 +13,7 @@ def test_parse_numbers_valid_input() -> None:
 
 def test_parse_numbers_invalid_input() -> None:
     """Test parsing of an invalid input string."""
-    with pytest.raises(ValueError, match="Invalid input. Please enter integers only."):
+    with pytest.raises(ValueError, match="invalid digit found in string"):
         parse_numbers("10, twenty, 30")
 
 
