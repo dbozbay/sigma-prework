@@ -1,11 +1,11 @@
 from datetime import datetime
 
 
-def get_user_date_of_birth() -> datetime:
+def get_user_dob() -> datetime:
     """Prompt user for a valid date of birth in YYYY-MM-DD format."""
+    dob = input("Enter your date of birth (YYYY-MM-DD): ")
     try:
-        dob_input = input("Enter your date of birth (YYYY-MM-DD): ")
-        return datetime.strptime(dob_input, "%Y-%m-%d")
+        return datetime.strptime(dob, "%Y-%m-%d")
     except ValueError:
         raise ValueError("Invalid date format. Please use YYYY-MM-DD format.")
 
@@ -23,7 +23,7 @@ def calculate_age(dob: datetime) -> int:
 def main() -> None:
     while True:
         try:
-            dob = get_user_date_of_birth()
+            dob = get_user_dob()
             age = calculate_age(dob)
             print(f"You are {age} years old.")
             break
